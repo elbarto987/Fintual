@@ -21,6 +21,9 @@ dev = [
 [tool.ruff]
 line-length = 100
 target-version = "py314"
+# Django-generated migrations aren't hand-written; linting their line
+# length/formatting adds noise without value.
+extend-exclude = ["*/migrations/*"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]

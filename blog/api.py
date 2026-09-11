@@ -11,10 +11,10 @@ from blog.models import Comment, Post, Tag, User
 from blog.schemas import (
     CommentCreateIn,
     CommentCreateOut,
+    CursorPaginatedPostListOut,
     PostCreateIn,
     PostCreateOut,
     PostDetailOut,
-    CursorPaginatedPostListOut,
     UserDetailOut,
 )
 

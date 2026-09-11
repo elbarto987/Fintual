@@ -43,7 +43,10 @@ class Post(models.Model):
     class Meta:
         indexes = [
             GinIndex(fields=["search_vector"], name="post_search_vector_gin"),
-            models.Index(fields=["is_published", "-created_at", "-id"], name="post_pub_created_idx"),
+            models.Index(
+                fields=["is_published", "-created_at", "-id"],
+                name="post_pub_created_idx",
+            ),
         ]
 
     def __str__(self) -> str:
