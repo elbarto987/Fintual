@@ -1,0 +1,29 @@
+[project]
+name = "backend-devops-interview"
+version = "0.1.0"
+description = "Small content service: users, posts, comments, tags."
+requires-python = ">=3.14"
+dependencies = [
+    "django>=5.2,<5.3",
+    "django-ninja>=1.5,<2",
+    "psycopg[binary]>=3.3,<4",
+    "faker>=30",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9",
+    "pytest-django>=4.11",
+    "ruff>=0.14",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "core.settings"
+python_files = ["test_*.py"]
